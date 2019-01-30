@@ -2,11 +2,22 @@ package com.ibm.newsletter.dto;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@Entity
 public class CommentDto {
 	
+	
+	@Id
+	@GeneratedValue
+	private int commentId;
+	
+	private int issueNumber;
 	private String comment;
 	private boolean isReply;
 	private int commentedBy_UID;
@@ -61,6 +72,14 @@ public class CommentDto {
 
 	public void setCommentPage(String commentPage) {
 		this.commentPage = commentPage;
+	}
+
+	public int getCommentId() {
+		return commentId;
+	}
+
+	public void setCommentId(int commentId) {
+		this.commentId = commentId;
 	}
 	
 	

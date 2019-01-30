@@ -29,15 +29,19 @@ public List<CommentDto> getComments(){
 	}
 
 @PostMapping(path="/postComment")
-public String saveComment(@RequestParam("comment") CommentDto comment) {
+public CommentDto saveComment(@RequestParam("comment") CommentDto comment) {
+
 	
 	String message="";
 	
-	return message;
+	return comment;
 	
 }
 
+@PostMapping(path="/deleteComment")
+public void deleteComment(@RequestParam("comment")CommentDto comment) {
 	
+}
 	
 	
 	

@@ -2,14 +2,14 @@ package com.ibm.newsletter.service;
 
 import java.util.List;
 
-import com.ibm.newsletter.dto.CommentDto;
+import com.ibm.newsletter.dto.Comments;
 
 
 public interface CommentService {
 	
-	List<CommentDto> getComments();
-	CommentDto saveComment();
-	void deleteComment();
+	List<Comments> getComments();
+	Comments saveComment(Comments comment);
+	void deleteComment(long commentId);
 	
 	
 	

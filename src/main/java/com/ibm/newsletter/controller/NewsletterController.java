@@ -17,12 +17,12 @@ public class NewsletterController {
 	NewsletterServiceImpl newsletterService;
 	
 	@GetMapping(path="/getNewsletterData")
-	public List<Newsletter> getNewsletterData(){
+	public Newsletter getNewsletterData(){
 		
-		List<Newsletter> newsletterData;
+		Newsletter newsletterData;
 		
 		newsletterData= newsletterService.getNewsletterData();
-		System.out.println(newsletterData.get(0).getIssueNumber());
+		
 		
 		return newsletterData;
 		

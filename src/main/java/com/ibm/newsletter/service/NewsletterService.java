@@ -7,11 +7,13 @@ import com.ibm.newsletter.dto.Newsletter;
 
 public interface NewsletterService {
 
-	List<Newsletter> getNewsletterData();
+	Newsletter getNewsletterData();
 	
 	void saveNewsletterData();
 	
 	void updateNewsletterData();
+	
+	
 	
 	
 	

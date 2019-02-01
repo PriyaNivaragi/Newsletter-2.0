@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.newsletter.dto.Comments;
+import com.ibm.newsletter.service.CommentService;
 import com.ibm.newsletter.service.CommentServiceImpl;
 
 @RestController
 public class CommentController {
 
 @Autowired
-CommentServiceImpl commentService;
+CommentService commentService;
 
 	
 @GetMapping(path="/getComments")

@@ -7,48 +7,66 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-import org.springframework.stereotype.Component;
+
 
 
 @Entity
-@Table(name="COMMENTS" ,schema="NEWSLETTER")
+@Table(name="NEWSLETTER_COMMENTS" )
+@NamedQuery(name="findCommentsByIssueNumber", query = "SELECT c FROM Comments c JOIN Newsletter n ON n.issueNumber=c.issueNumber JOIN Module m ON c.moduleId=m.moduleId  WHERE  n.month=:month and n.year=:year and m.moduleName=:moduleName"
+		
+		)
+
 public class Comments {
 	
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.SEQUENCE)
 	
-	@Column(name="COMMENTID")
+
 	private int commentId;
 	
-	@Column(name="MODULEID")
-	private int ModuleId;
 	
-	@Column(name="ISSUENUMBER")
+	
+	private int moduleId;
+	
+	
 	private int issueNumber;
 	
 	private String comment;
 	
-	@Column(name="ISREPLY")
+	
 	private boolean isReply;
 	
-	@Column(name="PARENTCOMMENTID")
+	
 	private int parentCommentId;
 	
-	@Column(name="COMMENTEDBY")
+	
 	private String commentedBy;
 	
-	@Column(name="TIMESTAMP")
+	
 	private Date timeStamp;
+	
+/*	@ManyToOne
+	@JoinColumn(name="moduleId", insertable = false, updatable = false)
+	private Module module;
+	
+	@ManyToOne
+	@JoinColumn(name="issueNumber", insertable = false, updatable = false)
+	private Newsletter newsletter;*/
+	
 
 	public int getModuleId() {
-		return ModuleId;
+		return moduleId;
 	}
 
 	public void setModuleId(int moduleId) {
-		ModuleId = moduleId;
+		this.moduleId = moduleId;
 	}
 
 	public int getParentCommentId() {
@@ -109,6 +127,12 @@ public class Comments {
 
 	public void setIssueNumber(int issueNumber) {
 		this.issueNumber = issueNumber;
+	}
+
+	
+
+	public void setCommentedBy(String commentedBy) {
+		this.commentedBy = commentedBy;
 	}
 	
 	

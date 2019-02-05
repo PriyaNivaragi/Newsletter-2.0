@@ -21,7 +21,7 @@ public class CommentController {
 CommentService commentService;
 
 	
-@GetMapping(path="/getComments")
+@GetMapping(path="/Comments")
 public List<Comments> getComments(){
 		
 		List<Comments> commentList=new ArrayList<>();
@@ -33,7 +33,7 @@ public List<Comments> getComments(){
 		
 	}
 
-@PostMapping(path="/postComment")
+@PostMapping(path="/Comment")
 public Comments saveComment(@RequestParam("comment") Comments comment) {
 
 	

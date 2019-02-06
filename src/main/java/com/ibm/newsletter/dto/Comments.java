@@ -24,7 +24,7 @@ public class Comments {
 	@Id
 	@GeneratedValue(strategy= GenerationType.SEQUENCE)
 	
-
+	@Column(name="COMMENT_ID")
 	private int commentId;
 	
 	

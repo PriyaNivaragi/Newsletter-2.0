@@ -1,11 +1,7 @@
 package com.ibm.newsletter.dto;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Table(name="NEWSLETTER_MODULE")

@@ -2,14 +2,10 @@ package com.ibm.newsletter.dto;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
@@ -52,13 +48,7 @@ public class Comments {
 	
 	private Date timeStamp;
 	
-/*	@ManyToOne
-	@JoinColumn(name="moduleId", insertable = false, updatable = false)
-	private Module module;
-	
-	@ManyToOne
-	@JoinColumn(name="issueNumber", insertable = false, updatable = false)
-	private Newsletter newsletter;*/
+
 	
 
 	public int getModuleId() {

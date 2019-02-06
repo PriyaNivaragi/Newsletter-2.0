@@ -1,6 +1,6 @@
 package com.ibm.newsletter.dto;
 
-import java.time.Month;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -16,7 +16,7 @@ public class Newsletter {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.SEQUENCE)
-	@Column(name="ISSUENUMBER", nullable=false)
+	@Column(name="ISSUE_NUMBER", nullable=false)
 	private int issueNumber;
 	
 	@Column(name="MONTH", nullable=false)
@@ -25,8 +25,12 @@ public class Newsletter {
 	@Column(name="YEAR", nullable=false)
 	private int year;
 	
-	@Column(name="TIMESTAMP", nullable=false)
+	@Column(name="TIME_STAMP", nullable=false)
 	private Date timeStamp;
+	
+/*	@OneToMany(mappedBy = "newsletter")
+	private List<Comments> comments= new ArrayList<Comments>();*/
+	
 
 	public int getIssueNumber() {
 		return issueNumber;
@@ -42,6 +46,23 @@ public class Newsletter {
 
 	public Date getTimeStamp() {
 		return timeStamp;
+	}
+
+	
+	public void setIssueNumber(int issueNumber) {
+		this.issueNumber = issueNumber;
+	}
+
+	public void setMonth(int month) {
+		this.month = month;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public void setTimeStamp(Date timeStamp) {
+		this.timeStamp = timeStamp;
 	}
 	
 

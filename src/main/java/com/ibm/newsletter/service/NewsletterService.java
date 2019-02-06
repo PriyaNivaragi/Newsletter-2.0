@@ -1,6 +1,6 @@
 package com.ibm.newsletter.service;
 
-import java.util.List;
+
 
 import com.ibm.newsletter.dto.Newsletter;
 

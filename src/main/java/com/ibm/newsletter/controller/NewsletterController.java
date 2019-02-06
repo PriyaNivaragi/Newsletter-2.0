@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.newsletter.dto.Newsletter;
+import com.ibm.newsletter.service.NewsletterService;
 import com.ibm.newsletter.service.NewsletterServiceImpl;
 
 @RestController
 public class NewsletterController {
 	
 	@Autowired
-	NewsletterServiceImpl newsletterService;
+	NewsletterService newsletterService;
 	
 	@GetMapping(path="/getNewsletterData")
 	public Newsletter getNewsletterData(){

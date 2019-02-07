@@ -1,18 +1,25 @@
 
   package com.ibm.newsletter.dto;
   
-  import javax.persistence.Column; 
-  import javax.persistence.Entity; 
-  import javax.persistence.Id; 
+  import java.util.List;
+
+import javax.persistence.Column; 
+  import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id; 
   import javax.persistence.Table;
   
   @Entity
   
   @Table(name="NEWSLETTER_RECOGNITION") 
-  		public class Recognition {
+  		public class Recognition{
   
   @Id
-  @Column(name="ISSUE_NUMBER", nullable=false) 
+  @Column(name="RECOGNITION_ID", nullable=false)
+  private long recognitionId;
+  
+  @Column(name="ISSUE_NUMBER") 
   private int issueNumber;
   
   @Column(name="STAR_OF_THE_MONTH") 
@@ -26,6 +33,30 @@
   
   @Column(name="CUSTOMER_DELIGHT") 
   private String customerDelight;
+  
+  public Recognition() {
+		super();
+	}
+
+
+public Recognition(int recognitionId, int issueNumber, String starOfTheMonth, String tower, String imagePath,
+		String customerDelight) {
+	super();
+	this.recognitionId = recognitionId;
+	this.issueNumber = issueNumber;
+	this.starOfTheMonth = starOfTheMonth;
+	this.tower = tower;
+	this.imagePath = imagePath;
+	this.customerDelight = customerDelight;
+}
+
+public long getRecognitionId() {
+	return recognitionId;
+}
+
+public void setRecognitionId(long id) {
+	this.recognitionId = id;
+}
 
 public int getIssueNumber() {
 	return issueNumber;
@@ -67,7 +98,4 @@ public void setCustomerDelight(String customerDelight) {
 	this.customerDelight = customerDelight;
 }
   
-  
-  
-  }
- 
+  } 

@@ -1,8 +1,10 @@
 package com.ibm.newsletter.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
-
+@Table(name="NEWSLETTER_DATA")
+@Entity
 public class Data {
 	
 	

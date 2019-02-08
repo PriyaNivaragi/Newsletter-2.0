@@ -1,30 +1,35 @@
-/*package com.ibm.newsletter.dao;
+package com.ibm.newsletter.dao;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ContextRefreshedEvent;
+import javax.annotation.PostConstruct;
+import javax.servlet.ServletContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Component;
 
 import com.ibm.newsletter.dto.Newsletter;
 import com.ibm.newsletter.service.NewsletterService;
-import com.ibm.newsletter.service.NewsletterServiceImpl;
+
 
 @Component
-public class NewsletterServiceCommandLineRunner implements ApplicationListener<ContextRefreshedEvent>  {
-
-	NewsletterServiceImpl newsletterService;
+public class NewsletterServiceCommandLineRunner  {
+	@Autowired
+	NewsletterService newsletterService;
+	
+	 @Autowired
+	 private ServletContext servletContext;
 	
 	
 	Newsletter newsletter= new Newsletter();
-	@Override
-	public void onApplicationEvent(ContextRefreshedEvent event) {
+	
+	@PostConstruct
+	public void init() {
 		
-		newsletter= newsletterService.getNewsletterData();
-		
+		System.out.println("running here");
+	 newsletter= newsletterService.getNewsletterData();
+	 
+	 servletContext.setAttribute("newsletter", newsletter);
+	
 	}
-
 }
-*/

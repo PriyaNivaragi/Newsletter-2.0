@@ -15,17 +15,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="NEWSLETTER_COMMENTS" )
-@NamedQuery(name="findCommentsByIssueNumber", query = "SELECT c FROM Comments c JOIN Newsletter n ON n.issueNumber=c.issueNumber JOIN Module m ON c.moduleId=m.moduleId  WHERE  n.month=:month and n.year=:year and m.moduleName=:moduleName"
-		
-		)
-
 public class Comments {
 	
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.SEQUENCE)
 	
-	@Column(name="COMMENT_ID")
 	private int commentId;
 	
 	

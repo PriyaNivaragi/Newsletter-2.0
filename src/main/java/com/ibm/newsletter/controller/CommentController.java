@@ -36,7 +36,7 @@ public List<Comments> getComments(){
 	}
 
 @PostMapping(path="/Comment")
-public Comments saveComment( @RequestParam("comment") Comments comment) {
+public Comments saveComment( @RequestBody Comments comment) {
 	System.out.println("Comment" +comment.getComment());
 		
 		comment= commentService.saveComment(comment);

@@ -8,7 +8,7 @@ import com.ibm.newsletter.dto.Data;
 
 public interface DataRepository extends JpaRepository<Data, Long > {
 	
-List<Data> findDatabyIssueNumberAndModueId(int issueNumber, int moduleId);
+List<Data> findDataByIssueNumberAndModuleId(int issueNumber, int moduleId);
 
 
 	

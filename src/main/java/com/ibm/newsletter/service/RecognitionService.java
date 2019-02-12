@@ -7,7 +7,13 @@ import com.ibm.newsletter.dto.Recognition;
 
 public interface RecognitionService {
 
-	List<Recognition> getRecognition(); 
-	Recognition saveRecognition(Recognition recognition);
+	List<Recognition> getRecognition();
+
+	void addRecognition(Recognition recognition);
+
+	void updateRecognition(long id, Recognition recognition);
+
+	void deleteRecognition(long id);
+	
 	
 	}

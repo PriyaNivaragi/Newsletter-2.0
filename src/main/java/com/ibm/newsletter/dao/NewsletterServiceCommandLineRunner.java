@@ -26,7 +26,7 @@ public class NewsletterServiceCommandLineRunner  {
 	@PostConstruct
 	public void init() {
 		
-		System.out.println("running here");
+		
 	 newsletter= newsletterService.getNewsletterData();
 	 
 	 servletContext.setAttribute("newsletter", newsletter);

@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
@@ -19,9 +20,8 @@ public class Comments {
 	
 	
 	@Id
-	@GeneratedValue(strategy= GenerationType.SEQUENCE)
-	
-	private int commentId;
+	@GeneratedValue(strategy= GenerationType.IDENTITY )
+	private long commentId;
 	
 	
 	
@@ -99,11 +99,11 @@ public class Comments {
 	
 	
 
-	public int getCommentId() {
+	public long getCommentId() {
 		return commentId;
 	}
 
-	public void setCommentId(int commentId) {
+	public void setCommentId(long commentId) {
 		this.commentId = commentId;
 	}
 

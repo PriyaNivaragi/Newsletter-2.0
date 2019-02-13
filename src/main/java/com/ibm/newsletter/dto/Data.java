@@ -1,13 +1,14 @@
 package com.ibm.newsletter.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Table(name="NEWSLETTER_DATA")
 @Entity
 public class Data {
 	
-	
+	@Id
 	private int moduleId;
 	private int issueNumber;
 	private String url;

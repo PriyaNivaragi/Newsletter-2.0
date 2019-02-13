@@ -20,9 +20,8 @@ public class Comments {
 	
 	
 	@Id
-	@GeneratedValue(strategy= GenerationType.SEQUENCE ,generator = "commentid_generator")
-	@SequenceGenerator(name="commentid_generator", sequenceName = "comment_Id", allocationSize=1000)
-	private int commentId;
+	@GeneratedValue(strategy= GenerationType.IDENTITY )
+	private long commentId;
 	
 	
 	
@@ -100,11 +99,11 @@ public class Comments {
 	
 	
 
-	public int getCommentId() {
+	public long getCommentId() {
 		return commentId;
 	}
 
-	public void setCommentId(int commentId) {
+	public void setCommentId(long commentId) {
 		this.commentId = commentId;
 	}
 

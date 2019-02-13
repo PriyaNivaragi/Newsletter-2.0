@@ -47,7 +47,9 @@ public Comments saveComment( @RequestBody Comments comment) {
 }
 
 @DeleteMapping(path="/Comment")
-public void deleteComment(@RequestParam("comment")Comments comment) {
+public void deleteComment(@RequestParam("commentId") Integer commentId) {
+	
+	commentService.deleteComment(commentId);
 	
 }
 	

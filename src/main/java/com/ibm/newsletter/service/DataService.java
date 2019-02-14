@@ -6,9 +6,9 @@ import com.ibm.newsletter.dto.Data;
 
 public interface DataService {
 	
-	public List<Data> getDatabyIssueNumberAndModuleId(int issueNumber, int moduleId);
+	public List<Data> getDatabyIssueNumberAndModuleId(int moduleId);
 	
-	public String saveData(List<Data> data);
+	public List<Data> saveData(List<Data> data);
 	
 	
 

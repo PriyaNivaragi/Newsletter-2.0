@@ -2,12 +2,19 @@ package com.ibm.newsletter.util;
 
 import java.time.LocalDate;
 
+import javax.servlet.ServletContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.ibm.newsletter.dto.Newsletter;
 
 @Component
 public class NewsletterUtil {
 	
 	LocalDate currentDate=LocalDate.now();
+	@Autowired
+	private ServletContext servletContext;
 	
 	
 	public int getCurrentMonth() {
@@ -34,6 +41,14 @@ public class NewsletterUtil {
 			
 		}
 		return year;
+	}
+	
+	public int getIssueNumber() {
+		
+		Newsletter newsletter= (Newsletter) servletContext.getAttribute("newsletter");
+		
+		int issueNumber= newsletter.getIssueNumber();
+		return issueNumber;
 	}
 
 }

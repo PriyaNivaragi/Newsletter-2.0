@@ -25,16 +25,16 @@ public class CommentServiceImpl implements CommentService {
 	@Autowired
 	CommentRepository commentRepository;
 
-
 	@Autowired
-	private ServletContext servletContext;
+	NewsletterUtil util;
+	
 
 	@Override
 	public List<Comments> getComments() {
-		Newsletter newsletter= (Newsletter) servletContext.getAttribute("newsletter");
+		
 
 
-		List<Comments> comments= commentRepository.findCommentsByIssueNumberAndModuleId(newsletter.getIssueNumber(), 1);
+		List<Comments> comments= commentRepository.findCommentsByIssueNumberAndModuleId(util.getIssueNumber(), 1);
 
 
 		return comments;

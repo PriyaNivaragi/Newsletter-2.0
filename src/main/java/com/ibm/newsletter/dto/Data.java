@@ -1,6 +1,8 @@
 package com.ibm.newsletter.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,7 +11,11 @@ import javax.persistence.Table;
 public class Data {
 	
 	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY )
+	private int id;
+	
 	private int moduleId;
+	
 	private int issueNumber;
 	private String url;
 	private String header;
@@ -57,6 +63,12 @@ public class Data {
 	}
 	public void setCurrentStatus(String currentStatus) {
 		this.currentStatus = currentStatus;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

@@ -23,7 +23,7 @@ public class CommentController {
 CommentService commentService;
 
 	
-@GetMapping(path="/Comment")
+@GetMapping(path="/comment")
 public List<Comments> getComments(){
 		
 		List<Comments> commentList=new ArrayList<>();
@@ -35,7 +35,7 @@ public List<Comments> getComments(){
 		
 	}
 
-@PostMapping(path="/Comment")
+@PostMapping(path="/comment")
 public Comments saveComment( @RequestBody Comments comment) {
 	System.out.println("Comment" +comment.getComment());
 		
@@ -46,7 +46,7 @@ public Comments saveComment( @RequestBody Comments comment) {
 	
 }
 
-@DeleteMapping(path="/Comment")
+@DeleteMapping(path="/comment")
 public void deleteComment(@RequestParam("commentId") Integer commentId) {
 	
 	commentService.deleteComment(commentId);

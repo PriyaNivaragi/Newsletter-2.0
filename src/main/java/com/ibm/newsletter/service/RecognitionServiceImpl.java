@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.ibm.newsletter.dto.Newsletter;
 import com.ibm.newsletter.dto.Recognition;
 import com.ibm.newsletter.repositories.RecognitionRepository;
+import com.ibm.newsletter.util.NewsletterUtil;
 
 @Service
 public class RecognitionServiceImpl implements RecognitionService {
@@ -22,11 +23,14 @@ public class RecognitionServiceImpl implements RecognitionService {
 	RecognitionRepository recognitionRepository;
 	@Autowired
 	NewsletterService newsletterService;
+	@Autowired
+	NewsletterUtil util;
+	
 	@Override
 	public List<Recognition> getRecognition() {
 
-		Newsletter newsletterData = newsletterService.getNewsletterData();
-		List<Recognition> recognitionData = recognitionRepository.findAllRecognitionByIssueNumber(newsletterData.getIssueNumber());
+		/* Newsletter newsletterData = newsletterService.getNewsletterData(); */
+		List<Recognition> recognitionData = recognitionRepository.findAllRecognitionByIssueNumber(util.getIssueNumber());
 		// TODO Auto-generated method stub
 		return recognitionData;
 	}

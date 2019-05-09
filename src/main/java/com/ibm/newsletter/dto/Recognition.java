@@ -17,6 +17,7 @@ import javax.persistence.Id;
   
   @Id
   @Column(name="RECOGNITION_ID", nullable=false)
+  @GeneratedValue(strategy= GenerationType.IDENTITY )
   private long recognitionId;
   
   @Column(name="ISSUE_NUMBER") 

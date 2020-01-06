@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.ibm.newsletter.dto.Comments;
+import com.ibm.newsletter.entity.Comments;
 
 public interface CommentRepository extends JpaRepository<Comments, Long>{
 

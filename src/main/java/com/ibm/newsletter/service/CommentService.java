@@ -2,7 +2,7 @@ package com.ibm.newsletter.service;
 
 import java.util.List;
 
-import com.ibm.newsletter.dto.Comments;
+import com.ibm.newsletter.entity.Comments;
 
 
 public interface CommentService {

@@ -1,18 +1,11 @@
 package com.ibm.newsletter.service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ibm.newsletter.dto.Newsletter;
-import com.ibm.newsletter.dto.Recognition;
+import com.ibm.newsletter.entity.Recognition;
 import com.ibm.newsletter.repositories.RecognitionRepository;
 import com.ibm.newsletter.util.NewsletterUtil;
 

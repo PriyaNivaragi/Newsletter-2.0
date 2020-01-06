@@ -2,7 +2,7 @@ package com.ibm.newsletter.service;
 
 import java.util.List;
 
-import com.ibm.newsletter.dto.Data;
+import com.ibm.newsletter.entity.Data;
 
 public interface DataService {
 	

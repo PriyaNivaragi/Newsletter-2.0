@@ -3,7 +3,7 @@ package com.ibm.newsletter.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
-import com.ibm.newsletter.dto.Data;
+import com.ibm.newsletter.entity.Data;
 
 
 public interface DataRepository extends JpaRepository<Data, Long > {

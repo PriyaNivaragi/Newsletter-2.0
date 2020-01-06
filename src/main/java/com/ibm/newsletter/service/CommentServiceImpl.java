@@ -3,18 +3,11 @@ package com.ibm.newsletter.service;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.servlet.ServletContext;
-import javax.transaction.Transactional;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ibm.newsletter.dto.Comments;
-import com.ibm.newsletter.dto.Newsletter;
+import com.ibm.newsletter.entity.Comments;
 import com.ibm.newsletter.repositories.CommentRepository;
 import com.ibm.newsletter.util.NewsletterUtil;
 

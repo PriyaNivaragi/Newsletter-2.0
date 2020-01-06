@@ -4,42 +4,42 @@ package com.ibm.newsletter.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ibm.newsletter.dto.Newsletter;
+import com.ibm.newsletter.entity.Newsletter;
 import com.ibm.newsletter.repositories.NewsletterRepository;
 import com.ibm.newsletter.util.NewsletterUtil;
 
 @Service
 public class NewsletterServiceImpl implements NewsletterService {
 
-	@Autowired
-	NewsletterRepository newsletterRepository;
-	
-	@Autowired
-	NewsletterUtil newsletterUtil;
+    @Autowired
+    NewsletterRepository newsletterRepository;
 
-	@Override
-	public Newsletter getNewsletterData() {
+    @Autowired
+    NewsletterUtil newsletterUtil;
 
-		Newsletter newsLetterData= new Newsletter();
-		int month=newsletterUtil.getCurrentMonth();
-		int year=newsletterUtil.getCurrentYear();
-		
-		newsLetterData=	newsletterRepository.findIssueNumberByMonthAndYear(month, year);
+    @Override
+    public Newsletter getNewsletter() {
 
-		return newsLetterData;
-	}
+        Newsletter newsLetter = new Newsletter();
+        int month = newsletterUtil.getCurrentMonth();
+        int year = newsletterUtil.getCurrentYear();
 
-	@Override
-	public void saveNewsletterData() {
-		// TODO Auto-generated method stub
-		
+        newsLetter = newsletterRepository.findIssueNumberByMonthAndYear(month, year);
 
-	}
+        return newsLetter;
+    }
 
-	@Override
-	public void updateNewsletterData() {
-		// TODO Auto-generated method stub
+    @Override
+    public void saveNewsletter() {
+        // TODO Auto-generated method stub
 
-	}
+
+    }
+
+    @Override
+    public void updateNewsletter() {
+        // TODO Auto-generated method stub
+
+    }
 
 }

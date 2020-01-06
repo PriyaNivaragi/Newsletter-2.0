@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+  import org.springframework.web.bind.annotation.RestController;
   
-  import com.ibm.newsletter.dto.Recognition; 
+  import com.ibm.newsletter.entity.Recognition;
   import com.ibm.newsletter.service.RecognitionService;
   
-  @RestController 
+  @RestController
+
   public class RecognitionController {
   
   @Autowired 
@@ -46,4 +45,3 @@ import org.springframework.web.bind.annotation.RestController;
 	  recognitionService.deleteRecognition(id);
   }
   }
- 

@@ -2,16 +2,16 @@ package com.ibm.newsletter.service;
 
 
 
-import com.ibm.newsletter.dto.Newsletter;
+import com.ibm.newsletter.entity.Newsletter;
 
 
 public interface NewsletterService {
 
-	Newsletter getNewsletterData();
+	Newsletter getNewsletter();
 	
-	void saveNewsletterData();
+	void saveNewsletter();
 	
-	void updateNewsletterData();
+	void updateNewsletter();
 	
 	
 	

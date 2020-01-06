@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.ibm.newsletter.dto.Data;
+import com.ibm.newsletter.entity.Data;
 import com.ibm.newsletter.repositories.DataRepository;
 import com.ibm.newsletter.util.NewsletterUtil;
 

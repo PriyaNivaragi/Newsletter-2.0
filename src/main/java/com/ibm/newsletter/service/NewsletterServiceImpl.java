@@ -2,6 +2,7 @@ package com.ibm.newsletter.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.ibm.newsletter.entity.Newsletter;
@@ -9,6 +10,7 @@ import com.ibm.newsletter.repositories.NewsletterRepository;
 import com.ibm.newsletter.util.NewsletterUtil;
 
 @Service
+
 public class NewsletterServiceImpl implements NewsletterService {
 
     @Autowired

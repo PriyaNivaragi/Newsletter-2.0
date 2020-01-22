@@ -7,62 +7,62 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="NEWSLETTER_QUIZ")
+@Table(name = "QUIZ")
 public class Quiz {
-	
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
-	
-	private int issueNumber;
-	private String question;
-	
-	private String options;
-	
-	private int answer;
 
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private long id;
 
-	
-	public int getIssueNumber() {
-		return issueNumber;
-	}
+    private int issueNumber;
 
-	public void setIssueNumber(int issueNumber) {
-		this.issueNumber = issueNumber;
-	}
+    private String question;
 
-	public String getQuestion() {
-		return question;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int questionId;
 
-	public void setQuestion(String question) {
-		this.question = question;
-	}
+    private String answer;
 
-	public String getOptions() {
-		return options;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setOptions(String options) {
-		this.options = options;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public int getAnswer() {
-		return answer;
-	}
 
-	public void setAnswer(int answer) {
-		this.answer = answer;
-	}
-	
-	
+    public int getIssueNumber() {
+        return issueNumber;
+    }
 
+    public void setIssueNumber(int issueNumber) {
+        this.issueNumber = issueNumber;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public int getQuestionId() {
+        return questionId;
+    }
+
+    public void setQuestionId(int questionId) {
+        this.questionId = questionId;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
 }

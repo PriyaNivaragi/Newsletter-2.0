@@ -2,126 +2,108 @@ package com.ibm.newsletter.entity;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-
+import javax.persistence.*;
 
 
 @Entity
-@Table(name="NEWSLETTER_COMMENTS" )
+@Table(name = "COMMENTS")
 public class Comments {
-	
-	
-	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY )
-	private long commentId;
-	
-	
-	
-	private int moduleId;
-	
-	
-	private int issueNumber;
-	
-	private String comment;
-	
-	
-	private boolean isReply;
-	
-	
-	private int parentCommentId;
-	
-	
-	private String commentedBy;
-	
-	
-	private Date timeStamp;
-	
 
-	
 
-	public int getModuleId() {
-		return moduleId;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
 
-	public void setModuleId(int moduleId) {
-		this.moduleId = moduleId;
-	}
+    @Column(name = "COMMENT_ID", nullable = false)
+    private long commentId;
 
-	public int getParentCommentId() {
-		return parentCommentId;
-	}
+    @Column(name = "MODULE_ID", nullable = false)
+    private int moduleId;
 
-	public void setParentCommentId(int parentCommentId) {
-		this.parentCommentId = parentCommentId;
-	}
+    @Column(name = "ISSUE_NUMBER", nullable = false)
+    private int issueNumber;
 
-	public String getCommentedBy() {
-		return commentedBy;
-	}
+    @Column(name = "COMMENT", nullable = false)
+    private String comment;
 
-	public void setCommentedByName(String commentedBy) {
-		this.commentedBy = commentedBy;
-	}
+    @Column(name = "IS_REPLY", nullable = true)
+    private boolean isReply;
 
-	public Date getTimeStamp() {
-		return timeStamp;
-	}
+    @Column(name = "PARENT_COMMENT_ID", nullable = true)
+    private int parentCommentId;
 
-	public void setTimeStamp(Date timeStamp) {
-		this.timeStamp = timeStamp;
-	}
+    @Column(name = "COMMENTED_BY", nullable = false)
+    private String commentedBy;
 
-	public String getComment() {
-		return comment;
-	}
+    @Column(name = "COMMENTED_AT", nullable = false)
+    private Date commentedAt;
 
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
 
-	public boolean isReply() {
-		return isReply;
-	}
+    public int getModuleId() {
+        return moduleId;
+    }
 
-	public void setReply(boolean isReply) {
-		this.isReply = isReply;
-	}
+    public void setModuleId(int moduleId) {
+        this.moduleId = moduleId;
+    }
 
-	
-	
-	
+    public int getParentCommentId() {
+        return parentCommentId;
+    }
 
-	public long getCommentId() {
-		return commentId;
-	}
+    public void setParentCommentId(int parentCommentId) {
+        this.parentCommentId = parentCommentId;
+    }
 
-	public void setCommentId(long commentId) {
-		this.commentId = commentId;
-	}
+    public String getCommentedBy() {
+        return commentedBy;
+    }
 
-	public int getIssueNumber() {
-		return issueNumber;
-	}
+    public void setCommentedByName(String commentedBy) {
+        this.commentedBy = commentedBy;
+    }
 
-	public void setIssueNumber(int issueNumber) {
-		this.issueNumber = issueNumber;
-	}
+    public Date getCommentedAt() {
+        return commentedAt;
+    }
 
-	
+    public void setCommentedAt(Date commentedAt) {
+        this.commentedAt = commentedAt;
+    }
 
-	public void setCommentedBy(String commentedBy) {
-		this.commentedBy = commentedBy;
-	}
-	
-	
-	
-	
-	
-	
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public boolean isReply() {
+        return isReply;
+    }
+
+    public void setReply(boolean isReply) {
+        this.isReply = isReply;
+    }
+
+    public long getCommentId() {
+        return commentId;
+    }
+
+    public void setCommentId(long commentId) {
+        this.commentId = commentId;
+    }
+
+    public int getIssueNumber() {
+        return issueNumber;
+    }
+
+    public void setIssueNumber(int issueNumber) {
+        this.issueNumber = issueNumber;
+    }
+
+    public void setCommentedBy(String commentedBy) {
+        this.commentedBy = commentedBy;
+    }
 
 }

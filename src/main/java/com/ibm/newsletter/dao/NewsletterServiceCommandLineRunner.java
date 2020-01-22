@@ -26,8 +26,6 @@ public class NewsletterServiceCommandLineRunner {
     @PostConstruct
     public void init() {
         newsletter = newsletterService.getNewsletter();
-        if(newsletter != null)
-            System.out.println("newsletter num:"+newsletter.getIssueNumber());
         servletContext.setAttribute("newsletter", newsletter);
     }
 }
